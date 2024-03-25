@@ -111,7 +111,7 @@ print(f'mkdir {type_dga}')
 # print(f'mkdir {client_id}\\{type_dga}')
 for i in range (1,2):
     if type_for_benign == 1:
-        print(f'python benign.py -n {100*number_of_sample} --type {type_for_benign} --output_file benign\\benign_{100*number_of_sample}.txt')
+        print(f'python benign.py -n {50*number_of_sample} --type {type_for_benign} --output_file benign\\benign_{100*number_of_sample}.txt')
     if type_for_benign == 0:
         line = 1000000/number_of_sample
         print(f'python benign.py --type {type_for_benign} --start {line*i} --end {line*(i+1)} --output_file benign\\benign_{number_of_sample}_{i}.txt')
