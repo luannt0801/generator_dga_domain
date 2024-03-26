@@ -1,6 +1,6 @@
 import random
 
-number_of_sample = 100
+number_of_sample = 1000
 number_file = 1
 type_dga = ''
 
@@ -16,8 +16,8 @@ type_dga = 'corebot'
 print(f'mkdir {type_dga}')
 for i in range (1,number_file+1):
     n = random.randint(432, 9348)
-    n = random.randint(1,31)
-    m = random.randint(1, 13)
+    n = random.randint(1,28)
+    m = random.randint(1, 12)
     y = random.randint(1000, 5000)
     print(f'python .\corebot.py -s {n} -d "{y}-{m}-{n}" -n {number_of_sample} --output_file corebot\\corebot_{number_of_sample}_{i}.txt')
 
@@ -96,7 +96,11 @@ type_dga = 'qakbot'
 print(f'mkdir {type_dga}')
 # print(f'mkdir {client_id}\\{type_dga}')
 for i in range (1,number_file+1):
-    print(f'python qakbot.py -n {number_of_sample} --output_file qakbot\\qakbot_{number_of_sample}_{i}.txt')
+    n = random.randint(1,31)
+    m = random.randint(1, 13)
+    y = random.randint(1000, 5000)
+    x = random.randint(0,1)
+    print(f'python qakbot.py -n {number_of_sample} --date "{y}-{m}-{n}" --seed {x} --output_file qakbot\\qakbot_{number_of_sample}_{i}.txt')
 
 # banjori
 type_dga = 'banjori'
@@ -111,7 +115,7 @@ print(f'mkdir {type_dga}')
 # print(f'mkdir {client_id}\\{type_dga}')
 for i in range (1,2):
     if type_for_benign == 1:
-        print(f'python benign.py -n {10*number_of_sample} --type {type_for_benign} --output_file benign\\benign_{100*number_of_sample}.txt')
+        print(f'python benign.py -n {10*number_of_sample} --type {type_for_benign} --output_file benign_{i}.txt')
     if type_for_benign == 0:
         line = 1000000/number_of_sample
-        print(f'python benign.py --type {type_for_benign} --start {line*i} --end {line*(i+1)} --output_file benign\\benign_{number_of_sample}_{i}.txt')
+        print(f'python benign.py --type {type_for_benign} --start {line*i} --end {line*(i+1)} --output_file benign.txt')
