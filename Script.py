@@ -152,6 +152,7 @@ def dirichlet(num_class,num_clients, num_data):
     # print(f"data for client : " , data_for_clients)
 
     client_ratios = (num_data * data_for_clients / np.sum(data_for_clients, axis=1)[:, np.newaxis]).astype(int)
+
     return client_ratios
 
 def generate_samples_for_clients(number_of_sample, number_file, dga_labels, type_for_benign, machine):
@@ -199,6 +200,7 @@ def generate_samples_for_clients(number_of_sample, number_file, dga_labels, type
 #     dirichlet_clients = dirichlet(num_class, number_of_client, total_data_dga_class)
     
 if __name__ == "__main__":
+    np.random.seed(0)
 
     parser = argparse.ArgumentParser(description='Test Algorithms.')
     # general settings
@@ -268,3 +270,6 @@ if __name__ == "__main__":
                 elif j == 9:
                     banjori(x, num_file, 'banjori', machine)
             benign(int(sum/10), num_file, type_for_benign, machine)
+
+    # # test
+    # print(dirichlet(10, 5, 1000))
