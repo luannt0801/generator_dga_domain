@@ -4,7 +4,6 @@ import argparse
 
 def corebot(number_of_sample, number_file, type_dga, machine):
     # #corebot
-    # #python .\corebot.py -s 231 -d "2012-08-02" -n 500 --output_file corebot\\corebot_200k_1.txt
     type_dga = 'corebot'
     # print(f'mkdir {client_id}\\{type_dga}')
     print(f'mkdir {machine}\\{type_dga}')
@@ -270,6 +269,14 @@ if __name__ == "__main__":
                 elif j == 9:
                     banjori(x, num_file, 'banjori', machine)
             benign(int(sum/10), num_file, type_for_benign, machine)
+    # non iid num_sample, num client, num file, type_dga, machine
+    elif type == 'non_iid':
+        for i in range(0,num_clients):
+            # print(f" client {i}: {dirichlet_clients[i]}")
+            machine = f"{name_client}_{i+1}"
+            
+
+
 
     # # test
     # print(dirichlet(10, 5, 1000))
