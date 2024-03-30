@@ -109,10 +109,10 @@ def benign(number_of_sample, number_file, type_for_benign, machine):
     # print(f'mkdir {client_id}\\{type_dga}')
     for i in range (1,number_file+1):
         if type_for_benign == 1:
-            print(f'python benign.py -n {number_of_sample*10} --type {type_for_benign} --output_file {machine}\\benign_{i}.txt')
+            print(f'python benign.py -n {number_of_sample*10} --type {type_for_benign} --output_file {machine}\\benign.txt')
         if type_for_benign == 0:
             line = 1000000/number_of_sample
-            print(f'python benign.py --type {type_for_benign} --start {line*i} --end {line*(i+1)} --output_file {machine}\\benign_{i}.txt')
+            print(f'python benign.py --type {type_for_benign} --start {line*i} --end {line*(i+1)} --output_file {machine}\\benign.txt')
 
 def print_all(number_of_sample, number_file, type_dga, type_for_benign, machine):
     print(f"mkdir {machine}")
@@ -269,12 +269,45 @@ if __name__ == "__main__":
                 elif j == 9:
                     banjori(x, num_file, 'banjori', machine)
             benign(int(sum/10), num_file, type_for_benign, machine)
+
     # non iid num_sample, num client, num file, type_dga, machine
     elif type == 'non_iid':
         for i in range(0,num_clients):
             # print(f" client {i}: {dirichlet_clients[i]}")
             machine = f"{name_client}_{i+1}"
+            if i == 0:
+                corebot(num_of_sample, num_file, 'corebot', machine)
+                benign(int(num_of_sample/10), num_file, 1, machine)
+            if i == 1:
+                dircypt(num_of_sample, num_file, 'dircrypt', machine)
+                benign(int(num_of_sample/10), num_file, 1, machine)
+            if i == 2:
+                dnschanger(num_of_sample, num_file, 'dnschanger', machine)
+                benign(int(num_of_sample/10), num_file, 1, machine)
+            if i == 3:
+                fobber(num_of_sample, num_file, 'fobber', machine)
+                benign(int(num_of_sample/10), num_file, 1, machine)
+            if i == 4:
+                necurs(num_of_sample, num_file, 'necurs', machine)
+                benign(int(num_of_sample/10), num_file, 1, machine)
+            if i == 5:
+                newgoz(num_of_sample, num_file, 'newgoz', machine)
+                benign(int(num_of_sample/10), num_file, 1, machine)
+            if i == 6:
+                qakbot(num_of_sample, num_file, 'qakbot', machine)
+                benign(int(num_of_sample/10), num_file, 1, machine)
+            if i == 7:
+                rambo(num_of_sample, num_file, 'rambo', machine)
+                benign(int(num_of_sample/10), num_file, 1, machine)
+            if i == 8:
+                ramnit(num_of_sample, num_file, 'ramnit', machine)
+                benign(int(num_of_sample/10), num_file, 1, machine)
+            if i == 9:
+                banjori(num_of_sample, num_file, 'banjori', machine)
+                benign(int(num_of_sample/10), num_file, 1, machine)
+
             
+        
 
 
 
