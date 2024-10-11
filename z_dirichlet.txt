@@ -1,0 +1,24 @@
+DGA Client 1:
+ 9908
+DGA Client 2:
+ 10219
+DGA Client 3:
+ 9588
+DGA Client 4:
+ 9734
+DGA Client 5:
+ 9976
+DGA Client 6:
+ 9896
+DGA Client 7:
+ 10456
+DGA Client 8:
+ 9708
+DGA Client 9:
+ 11353
+DGA Client 10:
+ 9977
+100815
+
+Tổng toàn bộ dữ liệu trên 10 máy: benign = malicious = 1,008,150 domains | Tổng là 2,016,300 domains
+Dữ liệu mỗi round: Phân phối theo dirichlet benign = malicious = 95k ~ 113k 

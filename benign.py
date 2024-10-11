@@ -7,6 +7,20 @@ def get_random_lines(file_path, n):
         random_lines = random.sample(lines, n)
     return random_lines
 
+# def get_random_lines(file_path, n):
+#     with open(file_path, 'r', encoding='utf-8') as file:
+#         lines = file.readlines()
+#         num_lines = len(lines)
+#         if num_lines == 0:
+#             print("File đầu vào rỗng.")
+#             return []
+#         elif n > num_lines:
+#             print("Số dòng cần lấy lớn hơn số dòng trong file.")
+#             return []
+#         else:
+#             random_lines = random.sample(lines, n)
+#             return random_lines
+
 def get_lines_from_start_to_end(file_path, start, end):
     with open(file_path, 'r') as file:
         lines = file.readlines()
